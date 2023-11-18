@@ -1,0 +1,96 @@
+[tool.poetry]
+name = "inferlyclient"
+version = "0.1"
+description = ""
+authors = ["Nicolas Durrande <nicolas@inferly.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"  # tested with 3.10 and 3.11
+tensorflow = "^2.11"
+gpflow = "^2.9.0"
+pandas = "^2.0.1"
+fastparquet = "^2023.2.0"
+sphinx-autoapi = "^2.1.0"
+matplotlib = "^3.7.1"
+protobuf = "3.20.3"
+plotly = "^5.15.0"
+pyright = "^1.1.336"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.12.0"
+taskipy = "^1.2.0"
+black = "^22.1.0"
+pytest = "^7.0.1"
+jupyterlab = "^3.3.1"
+jupytext = "^1.14.0"
+ruff = "^0.0.263"
+
+[tool.poetry.group.doc.dependencies]
+sphinx-book-theme = "^1.0.1"
+importlib-metadata = "^6.6.0"
+nbsphinx = "^0.9.1"
+sphinx-copybutton = "^0.5.2"
+sphinxext-opengraph = "^0.8.2"
+sphinx-autodoc-typehints = "^1.23.0"
+myst-nb = "^0.17.2"
+sphinx-remove-toctrees = "^0.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+test = "pytest -v -x --ff -rN -Wignore -s --tb=short --durations=10 tests"
+check = "	ruff check .; black --check ."
+format = "ruff --fix .; black ."
+doc = "cd docs; make html"
+
+[tool.black]
+line-length = 110  # needs to the same as ruff
+
+[tool.pyright]  # Also controls the Pylance VSCode extension.
+typeCheckingMode = "basic"
+reportUnnecessaryTypeIgnoreComment = true
+useLibraryCodeForTypes = false
+
+[tool.ruff]
+line-length = 110  # needs to be the same as black
+select = [
+    "A",  # flake8-builtins - don't shadow names built-in to the language
+    "C4",  # flake8-comprehensions - avoid unnecessary intermediate objects
+    "F",  # Pyflakes
+    "E", "W",  # Pycodestyle
+    "I",  # isort
+    "D",  # pydocstyle - docstring usage and formatting.
+    "N",  # pep8-naming - standard pythonic naming conventions.
+    "UP",  # pyupgrade - avoid deprecated / old-style / superfluous code.
+
+    # RET module. 505-508 inclusive are currently buggy:
+    #   https://github.com/charliermarsh/ruff/issues/1035
+    # and it is also questionable whether they improve legibility in all cases.
+    # We therefore leave those disabled.
+    "RET501", "RET502", "RET503", "RET504",
+
+    "SIM",  # flake8-simplify
+    "PL",  # Pylint
+    "PIE",  # flake8-pie
+    "ARG",  # flake8-unused-arguments
+
+    "RUF001", "RUF002", "RUF003",  # Avoid confusable unicode characters
+    "B026",  # Keywords after splatted arguments (i.e. `*args`)
+    "RUF100",  # Ensures all 'noqa' directives are used.
+]
+ignore = [
+    "C408",  # enforce literals for dicts
+    "D100",  # module docstrings (in every file)
+    "D104",  # package docstrings (in __init__.py)
+    "D107",  # docstring required for __init__ method
+    "D401",  # first line of docstring must be imperative
+    "N803",  # Argument name in function should be lowercase
+    "N806",  # Variable name in function should be lowercase
+    "PLR2004",  # "magic value" suppression is a bit too eager, sadly.
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"

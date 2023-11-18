@@ -1,0 +1,145 @@
+Traceback (most recent call last):
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nicolas/.pyenv/versions/3.11.0/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/nicolas/.pyenv/versions/3.11.0/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/nbclient/client.py", line 650, in async_setup_kernel
+    yield
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/nicolas/python/inferlyclient/.venv/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import inferlyclient as infly
+import gpflow
+import numpy as np
+import pandas as pd
+
+from plotly.subplots import make_subplots
+from inferlycore.models.kernels import kernel_factories, base_kernels
+from inferlycore.data.transform import unit_cube_rescaling, standardise_rescaling
+from inferlycore.models.diagnostics import plot_slices
+
+file_name = '../datasets/banana.parquet'
+inputs = ['x1', 'x2']
+outputs = ['y']
+seed = 44
+
+use_wandb = False
+
+anova_factory = kernel_factories['anova']
+keys = ["anova" + "_" + name_kern for name_kern in base_kernels]
+vals = [anova_factory(kern, len(inputs)) for kern in base_kernels.values()]
+kernel_library = dict(zip(keys, vals))
+
+if use_wandb:
+    import wandb
+
+for kern_name, kern in kernel_library.items():
+    kern = kernel_library[kern_name]
+    print(kern_name, kern)
+
+    ## load data
+    df = pd.read_parquet(file_name)
+
+    dataset = infly.data.Dataset(df, inputs, outputs)
+    trainset, testset = infly.data.train_test_split(dataset, n_train=1000, random_state=seed)
+    testset, _ = infly.data.train_test_split(testset, n_train=500, random_state=seed)
+
+    ## fit a GP model
+    X = trainset.data[inputs]
+    Y = trainset.data[outputs]
+
+    # create transforms
+    input_transform = unit_cube_rescaling(X)
+    output_transform = standardise_rescaling(Y)
+
+    # create model
+    kernel = kern
+    gpr = gpflow.models.GPR((input_transform.forward(X), output_transform.forward(Y)), kernel)
+    gpr.likelihood.variance.assign(1e-4)
+    gpmodel = infly.models.GPmodel(gpr, input_transform, output_transform)
+
+    # optimize
+    opt = gpflow.optimizers.Scipy()
+    opt_logs = opt.minimize(gpmodel.model.training_loss, gpmodel.model.trainable_variables, options=dict(maxiter=200))
+    print(opt_logs)
+
+
+    fig = make_subplots(rows=1, cols=8, subplot_titles=inputs)
+    plot_slices(gpmodel, fig, reference_point=np.zeros((1, 2)), xlim=np.array([[0, 1]]*2).T)
+    #for name, param in gpflow.utilities.parameter_dict(gpr).items():
+    #    wandb.log({name[1:]: param.numpy()})
+
+    # compute metrics
+    Xtest, Ytest = testset.data[inputs].values, testset.data[outputs].values
+    rmse = infly.models.rmse(gpmodel, [Xtest, Ytest])
+    nlpd = infly.models.nlpd(gpmodel, [Xtest, Ytest])
+
+    print("rmse", rmse)
+    print("nlpd", nlpd)
+
+    if use_wandb:
+        cfg = {
+            "data_file": file_name,
+            "inputs": inputs,
+            "outputs": outputs,
+            "kernel": kern_name,
+            "seed": seed
+        }
+
+        wandb.init(
+            #mode="disabled",
+            project = "example-pipeline-" + '_'.join(outputs) + '_vs_' + '_'.join(inputs),
+            name = kern_name + '_seed' + str(cfg['seed']),
+            notes = "run generated as part of inferlycore's documentation",
+            config = cfg
+        )
+    
+        html = gpflow.utilities.tabulate_module_summary(gpmodel.model, "html")
+        wandb.log({"model summary post-train": wandb.Html(html)})
+        
+        wandb.log({"plot prediction slices": fig})
+
+        wandb.log({"rmse": rmse})
+        wandb.log({"nlpd": nlpd})
+
+        wandb.finish()
+------------------
+
+----- stderr -----
+2023-11-18 22:28:31.929736: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-11-18 22:28:31.949805: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-11-18 22:28:32.035717: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-11-18 22:28:32.035752: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-11-18 22:28:32.049012: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-18 22:28:32.082031: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-11-18 22:28:32.083063: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+----- stderr -----
+2023-11-18 22:28:32.797176: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 7[0m
+[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01msubplots[39;00m [38;5;28;01mimport[39;00m make_subplots
+[0;32m----> 7[0m [38;5;28;01mfrom[39;00m [38;5;21;01minferlycore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkernels[39;00m [38;5;28;01mimport[39;00m kernel_factories, base_kernels
+[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01minferlycore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdata[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtransform[39;00m [38;5;28;01mimport[39;00m unit_cube_rescaling, standardise_rescaling
+[1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01minferlycore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdiagnostics[39;00m [38;5;28;01mimport[39;00m plot_slices
+
+[0;31mModuleNotFoundError[0m: No module named 'inferlycore'
+

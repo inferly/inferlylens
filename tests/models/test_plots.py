@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+
 import gpflow
 import numpy as np
 import pandas as pd
@@ -10,7 +13,8 @@ from inferlyclient.models.plots import plot_slices
 def test_model_plot_slices():
     """Smoke test for the plot_slices function."""
     # load a dataset
-    df = pd.read_parquet("datasets/banana.parquet").astype("float64")
+    root = Path(sys.modules['inferlyclient'].__file__).parent.parent
+    df = pd.read_parquet(root / "datasets/banana.parquet").astype("float64")
     X, Y = df.iloc[:50, :2], df.iloc[:50, 2:]
     Y = Y - Y.mean()
 

@@ -19,7 +19,7 @@ def doe_kmeans(n: int, dim: int, input_names: list[str] | None = None) -> pd.Dat
         pandas DataFrame of shape n x dim.
     """
     if input_names is not None:
-        if dim != len(input_names):
+        if dim != len(input_names):  # pragma: no cover
             raise ValueError("`input_names` must be a list with of length `dim`.")
     else:
         input_names = [f"x{i+1}" for i in range(dim)]

@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
@@ -6,7 +9,8 @@ from inferlyclient.data import standardise_rescaling, unit_cube_rescaling
 
 def test_unit_cube_rescaling():
     """Ensure that min (resp. max) value of data rescaled with unit_cube_rescaling is 0 (resp. 1)."""
-    df = pd.read_parquet("datasets/banana.parquet")
+    root = Path(sys.modules['inferlyclient'].__file__).parent.parent
+    df = pd.read_parquet(root / "datasets/banana.parquet")
 
     bijector = unit_cube_rescaling(df)
 

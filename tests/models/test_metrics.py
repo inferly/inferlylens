@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+
 import gpflow
 import numpy as np
 import pandas as pd
@@ -15,7 +18,8 @@ def test_metrics():
         - 0 when the model predicts as well as the mean value of the test set
     """
     # load a dataset
-    df = pd.read_parquet("datasets/banana.parquet").astype("float64").iloc[:50]
+    root = Path(sys.modules['inferlyclient'].__file__).parent.parent
+    df = pd.read_parquet(root / "datasets/banana.parquet").astype("float64").iloc[:50]
     dataset = infly.data.Dataset(df, ["x1", "x2"], ["y"])
     trainset, testset = dataset.split(sizes=[40, 10], labels=["train", "test"], seed=1234)
     X = trainset.df[trainset.input_names]

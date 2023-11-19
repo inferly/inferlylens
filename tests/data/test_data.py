@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+
 import pandas as pd
 import pytest
 
@@ -6,7 +9,8 @@ from inferlyclient.data import Dataset
 
 def test_dataset():
     """Test the Dataset class."""
-    df = pd.read_parquet("datasets/banana.parquet")
+    root = Path(sys.modules['inferlyclient'].__file__).parent.parent
+    df = pd.read_parquet(root / "datasets/banana.parquet")
 
     dataset = Dataset(df, ["x1", "x2"], ["y"])
 

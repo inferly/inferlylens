@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import Any
+
 import numpy as np
 import pandas as pd
 
@@ -29,7 +30,7 @@ class Dataset:
             if name not in self.df.columns:
                 raise ValueError(f"variable '{name}' not found in dataset")
 
-    def split(self, sizes: list[int], labels: list[Any], seed: int|None = None) -> list["Dataset"]:
+    def split(self, sizes: list[int], labels: list[Any], seed: int | None = None) -> list["Dataset"]:
         """Split a dataset, typically into a training and test set.
 
         The method also adds a column to the dataset's dataframe to indicate whether

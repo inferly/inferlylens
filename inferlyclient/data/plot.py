@@ -23,9 +23,7 @@ def pairsplot(df: pd.DataFrame, var_names: list[str], **kwargs) -> go.Figure:
     return fig
 
 
-def gridplot(
-    df: pd.DataFrame, var_names_haxis: list[str], var_names_vaxis: list[str], **kwargs
-) -> go.Figure:
+def gridplot(df: pd.DataFrame, var_names_haxis: list[str], var_names_vaxis: list[str], **kwargs) -> go.Figure:
     """Grid plot with variables from a dataframe.
 
     This is similar to `pairsplot` but allows to specify different variables for the

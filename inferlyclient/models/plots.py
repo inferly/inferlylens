@@ -12,7 +12,7 @@ from .gpmodel import GPmodel
 color = px.colors.qualitative.Plotly
 
 
-def hex_to_rgb(hex_color: str, opacity: float=1.) -> str:
+def hex_to_rgb(hex_color: str, opacity: float = 1.0) -> str:
     """Convert a hex color to rgb."""
     hex_color = hex_color.lstrip("#")
     if len(hex_color) == 3:

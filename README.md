@@ -1,4 +1,4 @@
-[![Quality checks and Tests](https://github.com/NicolasDurrande/inferly-client/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/NicolasDurrande/inferly-client/actions/workflows/quality-checks.yaml)
+[![Quality checks and Tests](https://github.com/NicolasDurrande/inferlyclient/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/NicolasDurrande/inferlyclient/actions/workflows/quality-checks.yaml)
 
 # inferlyclient: Visualising and interacting with Gaussian process models
 
@@ -20,7 +20,5 @@ The project uses *ruff* for formating and linting and *pytest* for testing. We a
 poetry run task check
 poetry run task test
 ```
-In order to build the documentation, install `pandoc` and run 
-```
-poetry run task docs
-```
+In order to build the documentation, install `pandoc` and run `poetry run task docs`.
+Code coverage can be obtained with `poetry run task cov`.

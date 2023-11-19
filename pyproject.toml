@@ -46,6 +46,7 @@ test = "pytest -v -x --ff -rN -Wignore -s --tb=short --durations=10 tests"
 check = "	ruff check .; black --check ."
 format = "ruff --fix .; black ."
 doc = "cd docs; make html"
+cov = "coverage run -m pytest .; coverage report; coverage xml"
 
 [tool.black]
 line-length = 110  # needs to the same as ruff

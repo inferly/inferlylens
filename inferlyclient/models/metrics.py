@@ -15,7 +15,8 @@ def rmse(model: GPmodel, test_data: Dataset):
     Returns:
         float: The root mean squared error.
     """
-    Xtest, Ytest = test_data.df[test_data.input_names], test_data.df[test_data.output_names]
+    Xtest, Ytest = (test_data.df[io].to_numpy() for io in [test_data.input_names, test_data.output_names])
+    print(Xtest.shape, Ytest.shape)
     return tf.sqrt(tf.reduce_mean(tf.square(Ytest - model.predict_y(Xtest)[0]), axis=0))
 
 

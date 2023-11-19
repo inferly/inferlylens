@@ -1,6 +1,3 @@
-import sys
-from pathlib import Path
-
 import gpflow
 import numpy as np
 import pandas as pd
@@ -11,12 +8,13 @@ from inferlyclient.data import Dataset
 from inferlyclient.data.transform import standardise_rescaling, unit_cube_rescaling
 from inferlyclient.models.gpmodel import GPmodel
 
+from ..utils import DATA_DIR
+
 
 def test_gpmodel():
     """Test for GPmodel class and the three predict functions."""
     # load a dataset
-    root = Path(sys.modules['inferlyclient'].__file__).parent.parent
-    df = pd.read_parquet(root / "datasets/banana.parquet").astype("float64")
+    df = pd.read_parquet(DATA_DIR / "banana.parquet").astype("float64")
     inputs, outputs = ["x1", "x2"], ["y"]
     X, Y = df.iloc[:50, :2], df.iloc[:50, 2:]
     Y = Y - Y.mean()

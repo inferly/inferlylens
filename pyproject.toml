@@ -7,16 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.11"
+numpy = "^1.26"
+scipy = "^1.10"
 tensorflow = "^2.11"
+tensorflow-probability = "^0.22"
 gpflow = "^2.9.0"
 pandas = "^2.0.1"
 fastparquet = "^2023.2.0"
-sphinx-autoapi = "^2.1.0"
-matplotlib = "^3.7.1"
-protobuf = "3.20.3"
+#protobuf = "3.20.3"
 plotly = "^5.15.0"
-pyright = "^1.1.336"
-coverage = "^7.3.2"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.12.0"
@@ -26,9 +25,12 @@ pytest = "^7.0.1"
 jupyterlab = "^3.3.1"
 jupytext = "^1.14.0"
 ruff = "^0.0.263"
+pyright = "^1.1.336"
+coverage = "^7.3.2"
 
 [tool.poetry.group.doc.dependencies]
 sphinx-book-theme = "^1.0.1"
+sphinx-autoapi = "^2.1.0"
 importlib-metadata = "^6.6.0"
 nbsphinx = "^0.9.1"
 sphinx-copybutton = "^0.5.2"

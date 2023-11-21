@@ -1,8 +1,9 @@
 [![Quality checks and Tests](https://github.com/NicolasDurrande/inferlyclient/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/NicolasDurrande/inferlyclient/actions/workflows/quality-checks.yaml)
 
-# inferlyclient: Visualising and interacting with Gaussian process models
+# Inferlyclient
 
-This library facilitates the manipulation of GP models and makes it easy to get insights from them.
+Inferlyclient makes it easy to manipulate, plot and get insights from Gaussian process models. It is build on top of GPflow and tensorflow.
+
 
 ## Install
 

@@ -15,8 +15,6 @@ color = px.colors.qualitative.Plotly
 def hex_to_rgb(hex_color: str, opacity: float = 1.0) -> str:
     """Convert a hex color to rgb."""
     hex_color = hex_color.lstrip("#")
-    if len(hex_color) == 3:
-        hex_color = hex_color * 2
     rgb = tuple(int(hex_color[i : i + 2], 16) for i in (0, 2, 4))
     return f"rgba({rgb[0]}, {rgb[1]}, {rgb[2]}, {opacity})"
 
@@ -109,7 +107,7 @@ def plot_actual_vs_predicted(model: GPmodel, data: Dataset) -> go.Figure:
         model (GPmodel): A GPmodel object.
         data (inferlycore Dataset): Dataset to compare model train/predictions.
     """
-    mean, var = model.predict_y(data.df[data.input_names].values)
+    mean, _ = model.predict_y(data.df[data.input_names].values)
     lower, upper = model.predict_quantiles(data.df[data.input_names].values, np.array([0.025, 0.975]))
     lower, mean, upper = lower.numpy(), mean.numpy(), upper.numpy()
     fig = make_subplots(rows=1, cols=len(data.output_names), subplot_titles=data.output_names)

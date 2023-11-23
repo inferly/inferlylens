@@ -23,6 +23,9 @@ def rmse(model: GPmodel, test_data: Dataset):
 def nlpd(model: GPmodel, test_data: Dataset):
     """Negative log predictive density (i.e. minus the average of the log likelihood on test set).
 
+    Note that the log likelihood is computed pointwise, which means that the covariance between inputs
+    is ignored.
+
     Args:
         model (GPmodel): A GPmodel object.
         test_data (inferlycore Dataset): test data.

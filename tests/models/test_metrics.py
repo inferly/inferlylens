@@ -1,6 +1,8 @@
 import gpflow
 import numpy as np
 import pandas as pd
+import tensorflow as tf
+import tensorflow_probability as tfp
 
 import inferlyclient as infly
 from inferlyclient.models.gpmodel import GPmodel
@@ -12,7 +14,7 @@ df = pd.read_parquet(DATA_DIR / "banana.parquet").astype("float64").iloc[:50]
 
 
 def test_nlpd_shape():
-    """Make sure rmse works with multioutputs."""
+    """Make sure nlpd works with multioutputs."""
     dataset = infly.data.Dataset(df, ["x1"], ["x2", "y"])
     trainset, testset = dataset.split(sizes=[40, 10], labels=["train", "test"], seed=1234)
     X = trainset.df[trainset.input_names]
@@ -21,6 +23,26 @@ def test_nlpd_shape():
     kernel = gpflow.kernels.Matern32(lengthscales=0.001, variance=100.0)
     model = GPmodel(gpflow.models.GPR((X, Y), kernel))
     np.testing.assert_allclose(2, np.asarray(nlpd(model, testset)).shape)
+
+
+def test_nlpd():
+    """Make sure nlpd works with output transform."""
+    dataset = infly.data.Dataset(df, ["x1", "x2"], ["y"])
+    trainset, testset = dataset.split(sizes=[40, 10], labels=["train", "test"], seed=1234)
+    output_tranform = tfp.bijectors.Scale(tf.cast(2.0, tf.float64))
+    X = trainset.df[trainset.input_names]
+    Y = output_tranform.forward(trainset.df[trainset.output_names])
+    Xtest = testset.df[testset.input_names].to_numpy()
+    Ytest = output_tranform.forward(testset.df[testset.output_names].to_numpy())
+
+    kernel = gpflow.kernels.Matern32(lengthscales=0.1, variance=1.0)
+    likelihood = gpflow.likelihoods.Exponential()
+    gpmodel = gpflow.models.VGP((X, Y), kernel, likelihood)
+    model = GPmodel(gpmodel, output_transform=output_tranform)
+
+    our_nlpd = nlpd(model, testset)
+    gpflow_nlpd = -np.mean(model.gpflow.predict_log_density((Xtest, Ytest)).numpy() + np.log(2.0))
+    np.testing.assert_allclose(our_nlpd, gpflow_nlpd)
 
 
 def test_rmse_shape():

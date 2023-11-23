@@ -1,3 +1,4 @@
+import gpflow
 import tensorflow as tf
 import tensorflow_probability as tfp
 from gpflow.models.model import GPModel as gpflowGPModel
@@ -67,6 +68,15 @@ class GPmodel:
         Xnew, Ynew = data.df[data.input_names], data.df[data.output_names]
         x = self.input_transform.forward(Xnew)
         y = self.output_transform.forward(Ynew)
-        density = self.gpflow.predict_log_density((x, y))
+
+        if y.shape[-1] == 1:
+            density = self.gpflow.predict_log_density((x, y))
+        elif isinstance(self.gpflow.likelihood, gpflow.likelihoods.Gaussian):
+            mu, var = self.gpflow.predict_y(x)
+            density = gpflow.logdensities.gaussian(y, mu, var)
+        else:  # pragma: no cover
+            return NotImplementedError(
+                "predict_log_density for multioutput models is only implemented for the Gaussian likelihood."
+            )
 
         return density + self.output_transform.forward_log_det_jacobian(y, event_ndims=0)

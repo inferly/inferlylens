@@ -2,10 +2,10 @@ import gpflow
 import numpy as np
 import pandas as pd
 
-from inferlyclient.data import Dataset
-from inferlyclient.data.transform import standardise_rescaling, unit_cube_rescaling
-from inferlyclient.models.gpmodel import GPmodel
-from inferlyclient.models.plots import plot_actual_vs_predicted, plot_lengthscales, plot_slices
+from inferlylens.data import Dataset
+from inferlylens.data.transform import standardise_rescaling, unit_cube_rescaling
+from inferlylens.models.gpmodel import GPmodel
+from inferlylens.models.plots import plot_actual_vs_predicted, plot_lengthscales, plot_slices
 
 from ..utils import DATA_DIR
 

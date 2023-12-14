@@ -4,9 +4,9 @@ import pandas as pd
 import tensorflow as tf
 import tensorflow_probability as tfp
 
-import inferlyclient as infly
-from inferlyclient.models.gpmodel import GPmodel
-from inferlyclient.models.metrics import nlpd, q2, rmse
+import inferlylens as infly
+from inferlylens.models.gpmodel import GPmodel
+from inferlylens.models.metrics import nlpd, q2, rmse
 
 from ..utils import DATA_DIR
 

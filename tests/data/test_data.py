@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from inferlyclient.data import Dataset
+from inferlylens.data import Dataset
 
 from ..utils import DATA_DIR
 

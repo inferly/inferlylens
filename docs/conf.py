@@ -48,7 +48,7 @@ project = "inferly-client"
 copyright = "2023, inferly.ai"  # noqa: A001
 author = "Nicolas Durrande"
 
-version = version("inferlyclient")
+version = version("inferlylens")
 release = version
 
 

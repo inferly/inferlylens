@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from inferlyclient.data import standardise_rescaling, unit_cube_rescaling
+from inferlylens.data import standardise_rescaling, unit_cube_rescaling
 
 from ..utils import DATA_DIR
 

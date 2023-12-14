@@ -40,7 +40,7 @@ def cartesian_product(X1: pd.DataFrame, X2: pd.DataFrame) -> pd.DataFrame:
 
         import numpy as np
         import pandas as pd
-        import inferlyclient as infly
+        import inferlylens as infly
 
         X1 = pd.DataFrame(np.linspace(0, 1, 11), columns=['x1'])
         X2 = pd.DataFrame(np.linspace(0, 1, 5), columns=['x2'])

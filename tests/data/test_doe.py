@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from inferlyclient.data import cartesian_product, doe_kmeans
+from inferlylens.data import cartesian_product, doe_kmeans
 
 
 def test_doe_kmeans():

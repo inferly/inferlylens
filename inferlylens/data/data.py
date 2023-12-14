@@ -33,8 +33,9 @@ class Dataset:
     def split(self, sizes: list[int], labels: list[Any], seed: int | None = None) -> list["Dataset"]:
         """Split a dataset, typically into a training and test set.
 
-        The method also adds a column to the dataset's dataframe to indicate whether
-        a point is in the training or test set.
+        The method adds a column to the input dataset's dataframe to indicate whether
+        a point is in the training or test set, and returns a list of Dataset objects corresponding
+        to the each split.
 
         Args:
             sizes (list of integers): number of points to keep for each split.
@@ -42,19 +43,18 @@ class Dataset:
             seed (int): Seed for the random number generator.
 
         Returns:
-            train_set (Dataset): Training set with n_train entries.
-            test_set (Dataset): Test set with remaining entries.
+            list of Dataset objects
         """
         n = self.df.shape[0]
         assert np.sum(sizes) <= n, "The sum of `sizes` must be less or equal to the number of data points."
         full_labels = [[label] * size for size, label in zip(sizes, labels)] + [[None] * (n - np.sum(sizes))]
         full_labels = [label for sublist in full_labels for label in sublist]
         rng = np.random.default_rng(seed)
-        self.df["label"] = rng.permutation(full_labels)
+        self.df["split"] = rng.permutation(full_labels)
 
         datasets = []
         for lab in labels:
-            filtered_df = pd.DataFrame(self.df[self.df["label"] == lab])  # makes pyright happy
+            filtered_df = pd.DataFrame(self.df[self.df["split"] == lab])  # makes pyright happy
             datasets.append(Dataset(filtered_df, self.input_names, self.output_names))
 
         return datasets

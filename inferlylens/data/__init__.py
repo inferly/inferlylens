@@ -1,7 +1,7 @@
 from .data import Dataset
 from .doe import cartesian_product, doe_kmeans
-from .plot import gridplot, pairsplot
-from .transform import standardise_rescaling, unit_cube_rescaling
+from .plots import gridplot, pairsplot
+from .transforms import standardise_rescaling, unit_cube_rescaling
 
 __all__ = [
     "Dataset",

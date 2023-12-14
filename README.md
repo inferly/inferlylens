@@ -1,8 +1,8 @@
-[![Quality checks and Tests](https://github.com/NicolasDurrande/inferlyclient/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/NicolasDurrande/inferlyclient/actions/workflows/quality-checks.yaml)
+[![Quality checks and Tests](https://github.com/NicolasDurrande/inferlylens/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/NicolasDurrande/inferlylens/actions/workflows/quality-checks.yaml)
 
-# Inferlyclient
+# Inferly Lens
 
-Inferlyclient makes it easy to manipulate, plot and get insights from Gaussian process models. It is build on top of GPflow and tensorflow.
+inferlylens makes it easy to plot and get insights from Gaussian process models. It is build on top of GPflow and tensorflow.
 
 
 ## Install
@@ -21,5 +21,5 @@ The project uses *ruff* for formating and linting and *pytest* for testing. We a
 poetry run task check
 poetry run task test
 ```
-In order to build the documentation, install `pandoc` and run `poetry run task docs`.
+In order to build the documentation, install [pandoc](https://pandoc.org/installing.html) and run `poetry run task doc`.
 Code coverage can be obtained with `poetry run task cov`.

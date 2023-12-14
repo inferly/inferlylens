@@ -1,6 +1,6 @@
 import pandas as pd
 
-from inferlyclient.data.plot import gridplot, pairsplot
+from inferlylens.data.plot import gridplot, pairsplot
 
 from ..utils import DATA_DIR
 

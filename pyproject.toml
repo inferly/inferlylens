@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "inferlyclient"
+name = "inferlylens"
 version = "0.1"
 description = ""
 authors = ["Nicolas Durrande <nicolas@inferly.ai>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11"
+python = ">=3.10, <3.12"  # tested with 3.11
 numpy = "^1.26"
 scipy = "^1.10"
 tensorflow = "^2.11"
@@ -44,11 +44,10 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-test = "pytest -v -x --ff -rN -Wignore -s --tb=short --durations=10 tests"
+test = "coverage run -m pytest -v -x --ff -rN -Wignore -s --tb=short --durations=10 tests; coverage report; coverage xml"
 check = "	ruff check .; black --check ."
 format = "ruff --fix .; black ."
 doc = "cd docs; make html"
-cov = "coverage run -m pytest .; coverage report; coverage xml"
 
 [tool.black]
 line-length = 110  # needs to the same as ruff

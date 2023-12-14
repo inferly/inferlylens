@@ -5,7 +5,7 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 
 from inferlylens.data import Dataset
-from inferlylens.data.transform import standardise_rescaling, unit_cube_rescaling
+from inferlylens.data.transforms import standardise_rescaling, unit_cube_rescaling
 from inferlylens.models.gpmodel import GPmodel
 
 from ..utils import DATA_DIR

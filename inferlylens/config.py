@@ -1,20 +1,32 @@
-import plotly
-
-DEFAULT_LAYOUT = {
-    "plot_bgcolor": "rgba(10, 10, 10, 0.1)",
-    "paper_bgcolor": "rgba(0, 0, 0, 0)",
-    "font": {"color": "rgba(0.5, 0.5, 0.5, 1.0)", "size": 16},
-    "margin": {"l": 50, "r": 50, "t": 50, "b": 50},
-    "hovermode": "closest",
-}
+import plotly.graph_objects as go
+import plotly.io as pio
 
 DEFAULT_AXIS = {
     "showgrid": True,
     "zeroline": False,
-    "showline": True,
+    "showline": False,
     "mirror": "ticks",
-    "linecolor": "rgba(0.5, 0.5, 0.5, 0.5)",
-    "gridcolor": "rgba(0.5, 0.5, 0.5, 0.2)",
+    "linecolor": "rgba(0.5, 0.5, 0.5, 0.2)",
+    "gridcolor": "rgba(0.5, 0.5, 0.5, 0.1)",
+    "automargin": True,
 }
 
-DEFAULT_COLORSCHEME = plotly.colors.qualitative.Plotly
+template = go.layout.Template()
+
+template.layout.plot_bgcolor = "rgba(0.5, 0.5, 0.5, 0.1)"
+template.layout.paper_bgcolor = "rgba(0, 0, 0, 0)"
+template.layout.font = {"color": "rgba(0.5, 0.5, 0.5, 1.0)", "size": 16}
+
+template.layout.polar.bgcolor = "rgba(0.5, 0.5, 0.5, 0.1)"
+template.layout.polar.radialaxis.linecolor = "rgba(0.5, 0.5, 0.5, 0.2)"
+template.layout.polar.radialaxis.gridcolor = "rgba(0.5, 0.5, 0.5, 0.1)"
+
+template.layout.polar.angularaxis.linecolor = "rgba(0.5, 0.5, 0.5, 0.2)"
+template.layout.polar.angularaxis.gridcolor = "rgba(0.5, 0.5, 0.5, 0.1)"
+
+template.layout.xaxis = DEFAULT_AXIS
+template.layout.yaxis = DEFAULT_AXIS
+
+pio.templates["inferly"] = template
+
+pio.templates.default = "plotly+inferly"

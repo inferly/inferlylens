@@ -77,9 +77,6 @@ def plot_slices(
                 i,
                 j,
             )
-    fig.update_layout({"plot_bgcolor": "rgba(10, 10, 10, .1)", "paper_bgcolor": "rgba(0, 0, 0, 0)"})
-    fig.update_xaxes(showgrid=False, zeroline=False)
-    fig.update_yaxes(showgrid=False, zeroline=False)
     fig.update_layout(height=300 * len(rows), width=300 * len(cols))
     return fig
 
@@ -93,8 +90,6 @@ def plot_lengthscales(kernel: gpflow.kernels.Kernel, inputs: list[str], **kwargs
         **kwargs: keyword arguments passed to `plotly.express.line_polar`.
     """
     assert hasattr(kernel, "lengthscales"), "The kernel must have an attribute `lengthscales`."
-    lengthscales = kernel.lengthscales.numpy().squeeze()
-    lengthscales[lengthscales > 10] = 10
     df = pd.DataFrame({"inputs": inputs, "lengthscales": kernel.lengthscales.numpy().squeeze()})
 
     return px.line_polar(df, r="lengthscales", theta="inputs", line_close=True, **kwargs)
@@ -149,13 +144,10 @@ def plot_actual_vs_predicted(model: GPmodel, data: Dataset) -> go.Figure:
 
     fig.update_layout(
         {
-            "plot_bgcolor": "rgba(10, 10, 10, .1)",
-            "paper_bgcolor": "rgba(0, 0, 0, 0)",
-            "xaxis": {"showgrid": False, "zeroline": False, "title": "Actual"},
-            "yaxis": {"showgrid": False, "zeroline": False, "title": "Predicted"},
             "title": "Actual vs Predicted",
             "height": 400,
-            "width": 200 * len(data.output_names),
+            "width": 260 * len(data.output_names),
+            "showlegend": False,
         }
     )
 

@@ -3,8 +3,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-from ..config import DEFAULT_AXIS, DEFAULT_COLORSCHEME, DEFAULT_LAYOUT
-
 
 def pairsplot(df: pd.DataFrame, var_names: list[str], thinning: float = 1.0, **kwargs) -> go.Figure:
     """Grid plot with variables from a dataframe.
@@ -24,9 +22,6 @@ def pairsplot(df: pd.DataFrame, var_names: list[str], thinning: float = 1.0, **k
 
     fig = px.scatter_matrix(df, dimensions=var_names, **kwargs)
     fig.update_traces(diagonal_visible=False)
-    fig.update_layout(DEFAULT_LAYOUT)
-    fig.update_layout({f"xaxis{n+1 if n>0 else ''}": DEFAULT_AXIS for n in range(100)})
-    fig.update_layout({f"yaxis{n+1 if n>0 else ''}": DEFAULT_AXIS for n in range(100)})
     return fig
 
 
@@ -65,6 +60,7 @@ def gridplot(
         column_titles=var_names_haxis,
         row_titles=var_names_vaxis,
     )
+    DEFAULT_COLORSCHEME = px.colors.qualitative.Plotly
     if color:
         col = [DEFAULT_COLORSCHEME[i] for i in df[color].astype("category").cat.codes]
     else:
@@ -86,8 +82,5 @@ def gridplot(
                 j,
             )
 
-    fig.update_layout(DEFAULT_LAYOUT)
-    fig.update_xaxes(DEFAULT_AXIS)
-    fig.update_yaxes(DEFAULT_AXIS)
     fig.update_layout(height=200 * len(rows) + 60, width=200 * len(cols) + 60)
     return fig

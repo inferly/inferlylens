@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 from inferlylens.data import Dataset
-from inferlylens.data.transform import standardise_rescaling, unit_cube_rescaling
+from inferlylens.data.transforms import standardise_rescaling, unit_cube_rescaling
 from inferlylens.models.gpmodel import GPmodel
 from inferlylens.models.plots import plot_actual_vs_predicted, plot_lengthscales, plot_slices
 

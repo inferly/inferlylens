@@ -5,8 +5,8 @@
 Package Reference
 **********************
 
-Inferly-client has two cornerstone objects: Datasets and Models. To both of them we can
-attach various diagnostics such as `plots` or `metrics`.
+`inferlylens` has two cornerstone concepts: Datasets and Models. Both of them have
+support various diagnostics such as `plots` or `metrics`.
 
 Data
 *********************************

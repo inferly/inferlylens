@@ -6,12 +6,16 @@ Inferlylens makes it easy to manipulate, plot and get insights from Gaussian pro
 Install with poetry
 ###################
 
-To install the library run ``poetry install`` in a terminal at the root of the repository. This will install the library and all its dependencies in a virtual environment.
+To install the library and all its dependencies in a virtual environment, you can run
+
+   poetry install
+   
+in a terminal at the root of the repository.
 
 Development setup
 ######################
 
-The project uses *ruff* for formating and linting and *pytest* for testing. We also use taskify to make it easy run tests, or build the documentation:::
+The project uses *ruff* for formating and linting and *pytest* for testing. We also use *taskipy* to make it easy run tests, or build the documentation:::
 
    poetry run task check
    poetry run task test
@@ -24,13 +28,13 @@ The project uses *ruff* for formating and linting and *pytest* for testing. We a
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
+
+   quick_start
+
+.. toctree::
+   :maxdepth: 1
    :titlesonly:
    :hidden:
 
    API reference <api>
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   quick_start.ipynb

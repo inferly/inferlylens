@@ -1,5 +1,8 @@
-@import url("theme.css");
+html {
+    --pst-font-size-base: 15px;
+}
 
-.wy-side-nav-search {
-  background-color: #fff;
+code.literal {
+ background-color:var(--pst-color-background);
+ border:0px;
 }

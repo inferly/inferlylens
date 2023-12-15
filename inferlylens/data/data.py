@@ -50,7 +50,9 @@ class Dataset:
         """
         n = self.df.shape[0]
         assert np.sum(sizes) <= n, "The sum of `sizes` must be less or equal to the number of data points."
-        full_labels = [[label] * size for size, label in zip(sizes, labels)] + [['other'] * (n - np.sum(sizes))]
+        full_labels = [[label] * size for size, label in zip(sizes, labels)] + [
+            ["other"] * (n - np.sum(sizes))
+        ]
         full_labels = [label for sublist in full_labels for label in sublist]
         rng = np.random.default_rng(seed)
         self.df[col_name] = rng.permutation(full_labels)

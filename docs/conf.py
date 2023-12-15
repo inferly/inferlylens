@@ -70,7 +70,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "matplotlib.sphinxext.plot_directive",
     "sphinx_autodoc_typehints",
-    #"myst_nb",
+    # "myst_nb",
     "nbsphinx",
     "sphinx_remove_toctrees",
     "sphinx_copybutton",
@@ -136,15 +136,9 @@ html_theme = "pydata_sphinx_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
+    "show_prev_next": False,
     "show_toc_level": 2,
-    "repository_url": "https://github.com/NicolasDurrande/inferly-core",
-    "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
-        "colab_url": "https://colab.research.google.com",
-        "notebook_interface": "jupyterlab",
-    },
-    "use_repository_button": True,
-    "use_sidenotes": True,  # Turns footnotes into sidenotes - https://sphinx-book-theme.readthedocs.io/en/stable/content-blocks.html
+    "github_url": "https://github.com/NicolasDurrande/inferly-core",
 }
 
 # The name of an image file (relative to this directory) to place at the top
@@ -153,107 +147,7 @@ html_logo = "_static/logo_250px.png"
 
 html_favicon = "_static/favicon_10px.png"
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# The default sidebars (for documents that don't match any pattern) are
-# defined by theme itself.  Builtin themes are using these templates by
-# default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
-# 'searchbox.html']``.
-#
-# html_sidebars = {}
-
-# -- Options for myst ----------------------------------------------
-#myst_heading_anchors = 3  # auto-generate 3 levels of heading anchors
-#myst_enable_extensions = ["dollarmath"]
-#nb_execution_mode = "force"
-#nb_execution_allow_errors = False
-#nb_merge_streams = True
-
-# nb_custom_formats = {
-#     ".md": ["jupytext.reads", {"fmt": "mystnb"}],
-# }
-
-# Notebook cell execution timeout; defaults to 30.
-#nb_execution_timeout = 100
-
-# List of patterns, relative to source directory, that match notebook
-# files that will not be executed.
-#nb_execution_excludepatterns = [
-    # example:
-    # 'notebooks/title.*',
-#]
-
-# -- Options for HTMLHelp output ---------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = "Coredoc"
-
-
-# -- Options for LaTeX output ------------------------------------------------
-
-#latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-#}
-
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-#latex_documents = [
-#    (main_doc, "INFERLYCORE.tex", "Inferly Core Documentation", "inferly.ai", "manual"),
-#]
-
-
-# -- Options for manual page output ------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [(main_doc, "inferly core", "Inferly Core Documentation", [author], 1)]
-
-
-# -- Options for Texinfo output ----------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (main_doc, "Inferly Core", "Core 2 Documentation", author, "Inferly Core 2"),
-]
-
-
-# -- Options for Epub output -------------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = project
-
-# The unique identifier of the text. This can be a ISBN number
-# or the project homepage.
-#
-# epub_identifier = ''
-
-# A unique identification for the text.
-#
-# epub_uid = ''
-
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ["search.html"]
 
 
 # -- Extension configuration -------------------------------------------------

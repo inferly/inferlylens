@@ -1,7 +1,7 @@
-Inferly-client documentation
+Inferlylens documentation
 ==========================================
 
-Inferly-client makes it easy to manipulate, plot and get insights from Gaussian process models. It is build on top of GPflow and tensorflow.
+Inferlylens makes it easy to manipulate, plot and get insights from Gaussian process models. It is build on top of GPflow and tensorflow.
 
 Install with poetry
 ###################
@@ -17,6 +17,14 @@ The project uses *ruff* for formating and linting and *pytest* for testing. We a
    poetry run task test
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :titlesonly:
+   :hidden:
 
-   api
+   API reference <api>
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   quick_start.ipynb

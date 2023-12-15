@@ -1,7 +1,28 @@
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.io as pio
 from plotly.subplots import make_subplots
+
+from ..config import split_color_dict
+
+
+def _get_color_discrete_map(df, color):
+    """Get color map dictionary for `df[color]`.
+
+    Overides the default color scheme if the column `color` corresponds to 'train', 'test' or 'val' splits.
+    """
+    if color not in df.columns:
+        return None
+
+    if np.all([label in ["test", "train", "val", "other"] for label in df[color].unique()]):
+        color_map = split_color_dict
+        print(color_map)
+    else:
+        discrete_colorscheme = pio.templates[pio.templates.default].layout.colorway
+        color_map = {v: discrete_colorscheme[i] for i, v in enumerate(df[color].unique())}
+    return color_map
 
 
 def pairsplot(df: pd.DataFrame, var_names: list[str], thinning: float = 1.0, **kwargs) -> go.Figure:
@@ -19,8 +40,8 @@ def pairsplot(df: pd.DataFrame, var_names: list[str], thinning: float = 1.0, **k
     """
     if thinning < 1.0:
         df = df.sample(frac=thinning)
-
-    fig = px.scatter_matrix(df, dimensions=var_names, **kwargs)
+    color_map = _get_color_discrete_map(df, kwargs.get("color"))
+    fig = px.scatter_matrix(df, dimensions=var_names, color_discrete_map=color_map, **kwargs)
     fig.update_traces(diagonal_visible=False)
     return fig
 
@@ -29,7 +50,7 @@ def gridplot(
     df: pd.DataFrame,
     var_names_haxis: list[str],
     var_names_vaxis: list[str],
-    color=None,
+    color: str | None = None,
     thinning: float = 1.0,
     **kwargs,
 ) -> go.Figure:
@@ -60,11 +81,11 @@ def gridplot(
         column_titles=var_names_haxis,
         row_titles=var_names_vaxis,
     )
-    DEFAULT_COLORSCHEME = px.colors.qualitative.Plotly
     if color:
-        col = [DEFAULT_COLORSCHEME[i] for i in df[color].astype("category").cat.codes]
+        color_map = _get_color_discrete_map(df, color)
+        col = [color_map[i] for i in df[color]]
     else:
-        col = DEFAULT_COLORSCHEME[0]
+        col = pio.templates[pio.templates.default].layout.colorway[0]
 
     rows, cols = fig._get_subplot_rows_columns()
     for i in rows:

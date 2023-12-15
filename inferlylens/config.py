@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import plotly.io as pio
 
+## inflerly plotly template
 DEFAULT_AXIS = {
     "showgrid": True,
     "zeroline": False,
@@ -30,3 +31,12 @@ template.layout.yaxis = DEFAULT_AXIS
 pio.templates["inferly"] = template
 
 pio.templates.default = "plotly+inferly"
+
+## colors for test/train/validation splits
+discrete_colorscheme = pio.templates[pio.templates.default].layout.colorway
+split_color_dict = {
+    "train": discrete_colorscheme[0],
+    "test": discrete_colorscheme[1],
+    "val": discrete_colorscheme[2],
+    "other": discrete_colorscheme[3],
+}

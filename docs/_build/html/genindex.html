@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -18,27 +18,25 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -48,7 +46,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <link rel="shortcut icon" href="_static/favicon_10px.png"/>
     <link rel="index" title="Index" href="#" />
@@ -96,8 +94,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -107,24 +105,16 @@
   </div>
   
     <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
   
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -143,15 +133,168 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="api.html">Package Reference</a></li>
-</ul>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Inferlylens
+                      </a>
+                    </li>
+                
 
-    </div>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="quick_start.html">
+                        Quick start guide
+                      </a>
+                    </li>
+                
+  </ul>
 </nav></div>
+      
     </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Inferlylens
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="quick_start.html">
+                        Quick start guide
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -165,98 +308,12 @@
       <main id="main-content" class="bd-main">
         
         
-
-<div class="sbt-scroll-pixel-helper"></div>
-
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-<a href="https://github.com/NicolasDurrande/inferly-core" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
+              <div class="bd-header-article"></div>
               
               
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-        </div>
-    </div>
-</div>
-
               
                 
 <div id="searchbox"></div>
@@ -283,7 +340,7 @@ document.write(`
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.cartesian_product">cartesian_product() (in module inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.cartesian_product">cartesian_product() (in module inferlylens.data)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -291,13 +348,13 @@ document.write(`
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.Dataset.data">data (inferlyclient.data.Dataset attribute)</a>
+      <li><a href="api.html#inferlylens.data.Dataset.data">data (inferlylens.data.Dataset attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.Dataset">Dataset (class in inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.Dataset">Dataset (class in inferlylens.data)</a>
 </li>
-      <li><a href="api.html#inferlyclient.data.doe_kmeans">doe_kmeans() (in module inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.doe_kmeans">doe_kmeans() (in module inferlylens.data)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -305,11 +362,11 @@ document.write(`
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.models.GPmodel">GPmodel (class in inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.GPmodel">GPmodel (class in inferlylens.models)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.gridplot">gridplot() (in module inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.gridplot">gridplot() (in module inferlylens.data)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -318,22 +375,22 @@ document.write(`
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    inferlyclient.data
+    inferlylens.data
 
       <ul>
-        <li><a href="api.html#module-inferlyclient.data">module</a>
+        <li><a href="api.html#module-inferlylens.data">module</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    inferlyclient.models
+    inferlylens.models
 
       <ul>
-        <li><a href="api.html#module-inferlyclient.models">module</a>
+        <li><a href="api.html#module-inferlylens.models">module</a>
 </li>
       </ul></li>
-      <li><a href="api.html#inferlyclient.data.Dataset.input_names">input_names (inferlyclient.data.Dataset attribute)</a>
+      <li><a href="api.html#inferlylens.data.Dataset.input_names">input_names (inferlylens.data.Dataset attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -345,9 +402,9 @@ document.write(`
     module
 
       <ul>
-        <li><a href="api.html#module-inferlyclient.data">inferlyclient.data</a>
+        <li><a href="api.html#module-inferlylens.data">inferlylens.data</a>
 </li>
-        <li><a href="api.html#module-inferlyclient.models">inferlyclient.models</a>
+        <li><a href="api.html#module-inferlylens.models">inferlylens.models</a>
 </li>
       </ul></li>
   </ul></td>
@@ -356,7 +413,7 @@ document.write(`
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.models.nlpd">nlpd() (in module inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.nlpd">nlpd() (in module inferlylens.models)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -364,7 +421,7 @@ document.write(`
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.Dataset.output_names">output_names (inferlyclient.data.Dataset attribute)</a>
+      <li><a href="api.html#inferlylens.data.Dataset.output_names">output_names (inferlylens.data.Dataset attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -372,21 +429,21 @@ document.write(`
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.pairsplot">pairsplot() (in module inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.pairsplot">pairsplot() (in module inferlylens.data)</a>
 </li>
-      <li><a href="api.html#inferlyclient.models.plot_actual_vs_predicted">plot_actual_vs_predicted() (in module inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.plot_actual_vs_predicted">plot_actual_vs_predicted() (in module inferlylens.models)</a>
 </li>
-      <li><a href="api.html#inferlyclient.models.plot_lengthscales">plot_lengthscales() (in module inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.plot_lengthscales">plot_lengthscales() (in module inferlylens.models)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.models.plot_slices">plot_slices() (in module inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.plot_slices">plot_slices() (in module inferlylens.models)</a>
 </li>
-      <li><a href="api.html#id0">predict_log_density() (inferlyclient.models.GPmodel method)</a>, <a href="api.html#inferlyclient.models.GPmodel.predict_log_density">[1]</a>
+      <li><a href="api.html#id0">predict_log_density() (inferlylens.models.GPmodel method)</a>, <a href="api.html#inferlylens.models.GPmodel.predict_log_density">[1]</a>
 </li>
-      <li><a href="api.html#id1">predict_quantiles() (inferlyclient.models.GPmodel method)</a>, <a href="api.html#inferlyclient.models.GPmodel.predict_quantiles">[1]</a>
+      <li><a href="api.html#id1">predict_quantiles() (inferlylens.models.GPmodel method)</a>, <a href="api.html#inferlylens.models.GPmodel.predict_quantiles">[1]</a>
 </li>
-      <li><a href="api.html#id2">predict_y() (inferlyclient.models.GPmodel method)</a>, <a href="api.html#inferlyclient.models.GPmodel.predict_y">[1]</a>
+      <li><a href="api.html#id2">predict_y() (inferlylens.models.GPmodel method)</a>, <a href="api.html#inferlylens.models.GPmodel.predict_y">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -394,7 +451,7 @@ document.write(`
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.models.q2">q2() (in module inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.q2">q2() (in module inferlylens.models)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -402,7 +459,7 @@ document.write(`
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.models.rmse">rmse() (in module inferlyclient.models)</a>
+      <li><a href="api.html#inferlylens.models.rmse">rmse() (in module inferlylens.models)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -410,11 +467,11 @@ document.write(`
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.Dataset.split">split() (inferlyclient.data.Dataset method)</a>
+      <li><a href="api.html#inferlylens.data.Dataset.split">split() (inferlylens.data.Dataset method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.standardise_rescaling">standardise_rescaling() (in module inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.standardise_rescaling">standardise_rescaling() (in module inferlylens.data)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -422,7 +479,7 @@ document.write(`
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#inferlyclient.data.unit_cube_rescaling">unit_cube_rescaling() (in module inferlyclient.data)</a>
+      <li><a href="api.html#inferlylens.data.unit_cube_rescaling">unit_cube_rescaling() (in module inferlylens.data)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -431,13 +488,12 @@ document.write(`
 
                 </article>
               
-
               
               
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
 </div>
                 </footer>
@@ -450,48 +506,54 @@ document.write(`
           </div>
           <footer class="bd-footer-content">
             
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Nicolas Durrande
-</p>
-
+          </footer>
+        
+      </main>
+    </div>
   </div>
   
-  <div class="footer-item">
-    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
   <p class="copyright">
     
       © Copyright 2023, inferly.ai.
       <br/>
     
   </p>
+</div>
+      
+        <div class="footer-item">
 
-  </div>
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
   
-  <div class="footer-item">
-    
-  </div>
   
-  <div class="footer-item">
-    
-  </div>
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
   
 </div>
-          </footer>
-        
 
-      </main>
-    </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
-
-  <footer class="bd-footer">
   </footer>
   </body>
 </html>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,27 +19,25 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -49,12 +47,13 @@
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
     <link rel="shortcut icon" href="_static/favicon_10px.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Inferly-client documentation" href="index.html" />
+    <link rel="next" title="Quick start guide" href="quick_start.html" />
+    <link rel="prev" title="Inferlylens documentation" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -98,8 +97,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -109,24 +108,16 @@
   </div>
   
     <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
   
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -145,15 +136,158 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Package Reference</a></li>
-</ul>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        API reference
+                      </a>
+                    </li>
+                
 
-    </div>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="quick_start.html">
+                        Quick start guide
+                      </a>
+                    </li>
+                
+  </ul>
 </nav></div>
+      
     </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="quick_start.html">
+                        Quick start guide
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -167,9 +301,6 @@
       <main id="main-content" class="bd-main">
         
         
-
-<div class="sbt-scroll-pixel-helper"></div>
-
           <div class="bd-content">
             <div class="bd-article-container">
               
@@ -178,178 +309,30 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
         <div class="header-article-item">
 
-<div class="article-header-buttons">
 
 
-<a href="https://github.com/NicolasDurrande/inferly-core" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/api.rst" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.rst</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Package Reference</li>
   </ul>
+</nav>
 </div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
       
     </div>
   
+  
 </div>
 </div>
               
               
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Package Reference</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-inferlyclient.data">Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.input_names"><code class="docutils literal notranslate"><span class="pre">Dataset.input_names</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.output_names"><code class="docutils literal notranslate"><span class="pre">Dataset.output_names</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.data"><code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.split"><code class="docutils literal notranslate"><span class="pre">Dataset.split()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.cartesian_product"><code class="docutils literal notranslate"><span class="pre">cartesian_product()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.doe_kmeans"><code class="docutils literal notranslate"><span class="pre">doe_kmeans()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.gridplot"><code class="docutils literal notranslate"><span class="pre">gridplot()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.pairsplot"><code class="docutils literal notranslate"><span class="pre">pairsplot()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.standardise_rescaling"><code class="docutils literal notranslate"><span class="pre">standardise_rescaling()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.unit_cube_rescaling"><code class="docutils literal notranslate"><span class="pre">unit_cube_rescaling()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-inferlyclient.models">Models</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel"><code class="docutils literal notranslate"><span class="pre">GPmodel</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel.predict_y"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_y()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel.predict_quantiles"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_quantiles()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel.predict_log_density"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_log_density()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_log_density()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_quantiles()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_y()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.nlpd"><code class="docutils literal notranslate"><span class="pre">nlpd()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.plot_actual_vs_predicted"><code class="docutils literal notranslate"><span class="pre">plot_actual_vs_predicted()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.plot_lengthscales"><code class="docutils literal notranslate"><span class="pre">plot_lengthscales()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.plot_slices"><code class="docutils literal notranslate"><span class="pre">plot_slices()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.q2"><code class="docutils literal notranslate"><span class="pre">q2()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.rmse"><code class="docutils literal notranslate"><span class="pre">rmse()</span></code></a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
-    </div>
-</div>
-
               
                 
 <div id="searchbox"></div>
@@ -359,11 +342,11 @@ document.write(`
 <h1>Package Reference<a class="headerlink" href="#package-reference" title="Permalink to this heading">#</a></h1>
 <p>Inferly-client has two cornerstone objects: Datasets and Models. To both of them we can
 attach various diagnostics such as <cite>plots</cite> or <cite>metrics</cite>.</p>
-<section id="module-inferlyclient.data">
-<span id="data"></span><h2>Data<a class="headerlink" href="#module-inferlyclient.data" title="Permalink to this heading">#</a></h2>
+<section id="module-inferlylens.data">
+<span id="data"></span><h2>Data<a class="headerlink" href="#module-inferlylens.data" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="inferlyclient.data.Dataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/data.html#Dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.Dataset" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.Dataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/data.html#Dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.Dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Main class for handling datasets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -375,8 +358,8 @@ attach various diagnostics such as <cite>plots</cite> or <cite>metrics</cite>.</
 </dd>
 </dl>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="inferlyclient.data.Dataset.input_names">
-<span class="sig-name descname"><span class="pre">input_names</span></span><a class="headerlink" href="#inferlyclient.data.Dataset.input_names" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.Dataset.input_names">
+<span class="sig-name descname"><span class="pre">input_names</span></span><a class="headerlink" href="#inferlylens.data.Dataset.input_names" title="Permalink to this definition">#</a></dt>
 <dd><p>value passed at construction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -386,8 +369,8 @@ attach various diagnostics such as <cite>plots</cite> or <cite>metrics</cite>.</
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="inferlyclient.data.Dataset.output_names">
-<span class="sig-name descname"><span class="pre">output_names</span></span><a class="headerlink" href="#inferlyclient.data.Dataset.output_names" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.Dataset.output_names">
+<span class="sig-name descname"><span class="pre">output_names</span></span><a class="headerlink" href="#inferlylens.data.Dataset.output_names" title="Permalink to this definition">#</a></dt>
 <dd><p>value passed at construction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -397,8 +380,8 @@ attach various diagnostics such as <cite>plots</cite> or <cite>metrics</cite>.</
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="inferlyclient.data.Dataset.data">
-<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#inferlyclient.data.Dataset.data" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.Dataset.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#inferlylens.data.Dataset.data" title="Permalink to this definition">#</a></dt>
 <dd><p>n x input_dim dataframe</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -408,25 +391,26 @@ attach various diagnostics such as <cite>plots</cite> or <cite>metrics</cite>.</
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="inferlyclient.data.Dataset.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/data.html#Dataset.split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.Dataset.split" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.Dataset.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'split'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/data.html#Dataset.split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.Dataset.split" title="Permalink to this definition">#</a></dt>
 <dd><p>Split a dataset, typically into a training and test set.</p>
-<p>The method also adds a column to the dataset’s dataframe to indicate whether
-a point is in the training or test set.</p>
+<p>The method adds a column to the input dataset’s dataframe to indicate whether
+a point is in the training or test set, and returns a list of Dataset objects corresponding
+to the each split.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sizes</strong> (<em>list</em><em> of </em><em>integers</em>) – number of points to keep for each split.</p></li>
 <li><p><strong>labels</strong> (<em>list</em>) – labels associated with each split.</p></li>
+<li><p><strong>col_name</strong> (<em>str</em>) – name of the column to be added to the dataframe.</p></li>
 <li><p><strong>seed</strong> (<em>int</em>) – Seed for the random number generator.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Training set with n_train entries.
-test_set (Dataset): Test set with remaining entries.</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<a class="reference internal" href="#inferlylens.data.Dataset" title="inferlylens.data.data.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a>]</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>train_set (<a class="reference internal" href="#inferlyclient.data.Dataset" title="inferlyclient.data.Dataset">Dataset</a>)</p>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of Dataset objects</p>
 </dd>
 </dl>
 </dd></dl>
@@ -434,15 +418,15 @@ test_set (Dataset): Test set with remaining entries.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.data.cartesian_product">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">cartesian_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/doe.html#cartesian_product"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.cartesian_product" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.cartesian_product">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">cartesian_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/doe.html#cartesian_product"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.cartesian_product" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates the cartesian product of two DoEs.</p>
 <p><strong>Example</strong>
 The following code generates a cartesian product of two dataframes with 11 and 5 points respectively.
 The resulting output is a dataframe with 55 points.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">inferlyclient</span> <span class="k">as</span> <span class="nn">infly</span>
+<span class="kn">import</span> <span class="nn">inferlylens</span> <span class="k">as</span> <span class="nn">infly</span>
 
 <span class="n">X1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">])</span>
 <span class="n">X2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x2&#39;</span><span class="p">])</span>
@@ -468,8 +452,8 @@ The resulting output is a dataframe with 55 points.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.data.doe_kmeans">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">doe_kmeans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/doe.html#doe_kmeans"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.doe_kmeans" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.doe_kmeans">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">doe_kmeans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/doe.html#doe_kmeans"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.doe_kmeans" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates a Design of Experiment (DoE) where points are uniformely distributed in the unit cube.</p>
 <p>The DoE is obtained by running a k-means algorithm with $n$ classes on a large number of
 uniformly sampled points. This procedure ensures that the resulting DoE has a lower discrepency than
@@ -492,17 +476,19 @@ $n$ uniformly sampled points.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.data.gridplot">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">gridplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_names_haxis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_names_vaxis</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/plot.html#gridplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.gridplot" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.gridplot">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">gridplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_names_haxis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_names_vaxis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thinning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/plots.html#gridplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.gridplot" title="Permalink to this definition">#</a></dt>
 <dd><p>Grid plot with variables from a dataframe.</p>
 <p>This is similar to <cite>pairsplot</cite> but allows to specify different variables for the
-horizontal and vertical axis.</p>
+horizontal and vertical axis. Note that this implementation is more memory demending.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>df</strong> (<em>pandas.Dataframe</em>) – dataframe.</p></li>
 <li><p><strong>var_names_haxis</strong> (<em>list</em><em> of </em><em>str</em>) – names of variables to be ploted on the horizontal axis.</p></li>
 <li><p><strong>var_names_vaxis</strong> (<em>list</em><em> of </em><em>str</em>) – names of variables to be ploted on the vertical axis.</p></li>
+<li><p><strong>color</strong> (<em>str</em>) – name of the column to be used for coloring the points.</p></li>
+<li><p><strong>thinning</strong> (<em>float</em>) – fraction of the data to be used for plotting.</p></li>
 <li><p><strong>**kwargs</strong> – additional arguments passed to <cite>plotly.express.scatter</cite>.</p></li>
 </ul>
 </dd>
@@ -516,14 +502,15 @@ horizontal and vertical axis.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.data.pairsplot">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">pairsplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_names</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/plot.html#pairsplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.pairsplot" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.pairsplot">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">pairsplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thinning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/plots.html#pairsplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.pairsplot" title="Permalink to this definition">#</a></dt>
 <dd><p>Grid plot with variables from a dataframe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>df</strong> (<em>panda.Dataframe</em>) – dataframe.</p></li>
 <li><p><strong>var_names</strong> (<em>list</em><em> of </em><em>str</em>) – names of variables to be ploted on the horizontal axis.</p></li>
+<li><p><strong>thinning</strong> (<em>float</em>) – fraction of the data to be used for plotting.</p></li>
 <li><p><strong>**kwargs</strong> – additional arguments passed to <cite>plotly.express.scatter_matrix</cite>.</p></li>
 </ul>
 </dd>
@@ -537,8 +524,8 @@ horizontal and vertical axis.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.data.standardise_rescaling">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">standardise_rescaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/transform.html#standardise_rescaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.standardise_rescaling" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.standardise_rescaling">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">standardise_rescaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/transforms.html#standardise_rescaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.standardise_rescaling" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes the linear bijector that maps the data to zero mean unit variance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -554,8 +541,8 @@ horizontal and vertical axis.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.data.unit_cube_rescaling">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.data.</span></span><span class="sig-name descname"><span class="pre">unit_cube_rescaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/data/transform.html#unit_cube_rescaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.data.unit_cube_rescaling" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.data.unit_cube_rescaling">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.data.</span></span><span class="sig-name descname"><span class="pre">unit_cube_rescaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/data/transforms.html#unit_cube_rescaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.data.unit_cube_rescaling" title="Permalink to this definition">#</a></dt>
 <dd><p>Computes the linear bijector that maps the data to the unit cube.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -571,11 +558,11 @@ horizontal and vertical axis.</p>
 </dd></dl>
 
 </section>
-<section id="module-inferlyclient.models">
-<span id="models"></span><h2>Models<a class="headerlink" href="#module-inferlyclient.models" title="Permalink to this heading">#</a></h2>
+<section id="module-inferlylens.models">
+<span id="models"></span><h2>Models<a class="headerlink" href="#module-inferlylens.models" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="inferlyclient.models.GPmodel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">GPmodel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpflow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_transform=&lt;tfp.bijectors.Identity</span> <span class="pre">'identity'</span> <span class="pre">batch_shape=[]</span> <span class="pre">forward_min_event_ndims=0</span> <span class="pre">inverse_min_event_ndims=0</span> <span class="pre">dtype_x=?</span> <span class="pre">dtype_y=?&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_transform=&lt;tfp.bijectors.Identity</span> <span class="pre">'identity'</span> <span class="pre">batch_shape=[]</span> <span class="pre">forward_min_event_ndims=0</span> <span class="pre">inverse_min_event_ndims=0</span> <span class="pre">dtype_x=?</span> <span class="pre">dtype_y=?&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.GPmodel" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.GPmodel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">GPmodel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpflow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_transform=&lt;tfp.bijectors.Identity</span> <span class="pre">'identity'</span> <span class="pre">batch_shape=[]</span> <span class="pre">forward_min_event_ndims=0</span> <span class="pre">inverse_min_event_ndims=0</span> <span class="pre">dtype_x=?</span> <span class="pre">dtype_y=?&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_transform=&lt;tfp.bijectors.Identity</span> <span class="pre">'identity'</span> <span class="pre">batch_shape=[]</span> <span class="pre">forward_min_event_ndims=0</span> <span class="pre">inverse_min_event_ndims=0</span> <span class="pre">dtype_x=?</span> <span class="pre">dtype_y=?&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.GPmodel" title="Permalink to this definition">#</a></dt>
 <dd><p>Wrapper around GPflow models to include input and output transforms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -587,27 +574,27 @@ horizontal and vertical axis.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="inferlyclient.models.GPmodel.predict_y">
-<span class="sig-name descname"><span class="pre">predict_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel.predict_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.GPmodel.predict_y" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.GPmodel.predict_y">
+<span class="sig-name descname"><span class="pre">predict_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel.predict_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.GPmodel.predict_y" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="inferlyclient.models.GPmodel.predict_quantiles">
-<span class="sig-name descname"><span class="pre">predict_quantiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel.predict_quantiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.GPmodel.predict_quantiles" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.GPmodel.predict_quantiles">
+<span class="sig-name descname"><span class="pre">predict_quantiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel.predict_quantiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.GPmodel.predict_quantiles" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="inferlyclient.models.GPmodel.predict_log_density">
-<span class="sig-name descname"><span class="pre">predict_log_density</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel.predict_log_density"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.GPmodel.predict_log_density" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.GPmodel.predict_log_density">
+<span class="sig-name descname"><span class="pre">predict_log_density</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel.predict_log_density"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.GPmodel.predict_log_density" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">predict_log_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel.predict_log_density"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict_log_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel.predict_log_density"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">#</a></dt>
 <dd><p>Wrapper around gpflow.models.predict_density that applies the input and output transforms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#inferlyclient.data.Dataset" title="inferlyclient.data.data.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a>) – </p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#inferlylens.data.Dataset" title="inferlylens.data.data.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a>) – </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code></p>
@@ -617,7 +604,7 @@ horizontal and vertical axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">predict_quantiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xnew</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel.predict_quantiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict_quantiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xnew</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel.predict_quantiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition">#</a></dt>
 <dd><p>Wrapper around gpflow.models.predict_y that applies the input and output transforms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -637,7 +624,7 @@ horizontal and vertical axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">predict_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xnew</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/gpmodel.html#GPmodel.predict_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xnew</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/gpmodel.html#GPmodel.predict_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition">#</a></dt>
 <dd><p>Wrapper around gpflow.models.predict_y that applies the input and output transforms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -656,33 +643,35 @@ var (tf.Tensor): n x output_dim tensor of variances</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.models.nlpd">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">nlpd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/metrics.html#nlpd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.nlpd" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.nlpd">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">nlpd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/metrics.html#nlpd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.nlpd" title="Permalink to this definition">#</a></dt>
 <dd><p>Negative log predictive density (i.e. minus the average of the log likelihood on test set).</p>
+<p>Note that this computes the average of the <em>pointwise</em> log likelihood, which means that
+the covariance between inputs is ignored.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference internal" href="#inferlyclient.models.GPmodel" title="inferlyclient.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="#inferlylens.models.GPmodel" title="inferlylens.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
 <li><p><strong>test_data</strong> (<em>inferlycore Dataset</em>) – test data.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The negative log predictive density.</p>
+<dd class="field-even"><p>The negative log predictive density for each output.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p>pd.Series</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.models.plot_actual_vs_predicted">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">plot_actual_vs_predicted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/plots.html#plot_actual_vs_predicted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.plot_actual_vs_predicted" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.plot_actual_vs_predicted">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">plot_actual_vs_predicted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/plots.html#plot_actual_vs_predicted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.plot_actual_vs_predicted" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot actual vs predicted values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference internal" href="#inferlyclient.models.GPmodel" title="inferlyclient.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="#inferlylens.models.GPmodel" title="inferlylens.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
 <li><p><strong>data</strong> (<em>inferlycore Dataset</em>) – Dataset to compare model train/predictions.</p></li>
 </ul>
 </dd>
@@ -693,8 +682,8 @@ var (tf.Tensor): n x output_dim tensor of variances</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.models.plot_lengthscales">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">plot_lengthscales</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/plots.html#plot_lengthscales"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.plot_lengthscales" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.plot_lengthscales">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">plot_lengthscales</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/plots.html#plot_lengthscales"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.plot_lengthscales" title="Permalink to this definition">#</a></dt>
 <dd><p>Spider chart to inspect the lengthscales.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -708,13 +697,13 @@ var (tf.Tensor): n x output_dim tensor of variances</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.models.plot_slices">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">plot_slices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/plots.html#plot_slices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.plot_slices" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.plot_slices">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">plot_slices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/plots.html#plot_slices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.plot_slices" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot slices of the posterior distribution at a reference point.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference internal" href="#inferlyclient.models.GPmodel" title="inferlyclient.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="#inferlylens.models.GPmodel" title="inferlylens.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
 <li><p><strong>input_names</strong> (<em>list</em><em> of </em><em>strings</em>) – the name of the variables associated with each input dimension.</p></li>
 <li><p><strong>output_names</strong> (<em>list</em><em> of </em><em>strings</em>) – the name of the variables associated with each output dimension.</p></li>
 <li><p><strong>reference_point</strong> (<em>tf.Tensor</em>) – A reference point in the input space with shape [1, dim]. All slices will
@@ -726,43 +715,43 @@ cut through this point.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.models.q2">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">q2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/metrics.html#q2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.q2" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.q2">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">q2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/metrics.html#q2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.q2" title="Permalink to this definition">#</a></dt>
 <dd><p>Percentage of explained variance.</p>
 <p>Q2 is equal to 1 if the model predicts perfectly, and 0 if the model predicts as well as the
 mean value of the test set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference internal" href="#inferlyclient.models.GPmodel" title="inferlyclient.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="#inferlylens.models.GPmodel" title="inferlylens.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
 <li><p><strong>test_data</strong> (<em>inferlycore Dataset</em>) – test data.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The q2 metrics for each output.</p>
+<dd class="field-even"><p>The q2 metric for each output.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p>pd.Series</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="inferlyclient.models.rmse">
-<span class="sig-prename descclassname"><span class="pre">inferlyclient.models.</span></span><span class="sig-name descname"><span class="pre">rmse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlyclient/models/metrics.html#rmse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlyclient.models.rmse" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="inferlylens.models.rmse">
+<span class="sig-prename descclassname"><span class="pre">inferlylens.models.</span></span><span class="sig-name descname"><span class="pre">rmse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/inferlylens/models/metrics.html#rmse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#inferlylens.models.rmse" title="Permalink to this definition">#</a></dt>
 <dd><p>Root mean squared error.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference internal" href="#inferlyclient.models.GPmodel" title="inferlyclient.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="#inferlylens.models.GPmodel" title="inferlylens.models.GPmodel"><em>GPmodel</em></a>) – A GPmodel object.</p></li>
 <li><p><strong>test_data</strong> (<em>tuple</em><em>[</em><em>tf.Tensor</em><em>, </em><em>tf.Tensor</em><em>]</em>) – A tuple of tensors (Xtest, Ytest) with the test data.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The root mean squared error.</p>
+<dd class="field-even"><p>The root mean squared error for each output.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p>pd.Series</p>
 </dd>
 </dl>
 </dd></dl>
@@ -773,13 +762,12 @@ mean value of the test set.</p>
 
                 </article>
               
-
               
               
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -787,8 +775,17 @@ mean value of the test set.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Inferly-client documentation</p>
+        <p class="prev-next-title">Inferlylens documentation</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="quick_start.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quick start guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -800,47 +797,57 @@ mean value of the test set.</p>
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-inferlyclient.data">Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.input_names"><code class="docutils literal notranslate"><span class="pre">Dataset.input_names</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.output_names"><code class="docutils literal notranslate"><span class="pre">Dataset.output_names</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.data"><code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.Dataset.split"><code class="docutils literal notranslate"><span class="pre">Dataset.split()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-inferlylens.data">Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.Dataset.input_names"><code class="docutils literal notranslate"><span class="pre">Dataset.input_names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.Dataset.output_names"><code class="docutils literal notranslate"><span class="pre">Dataset.output_names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.Dataset.data"><code class="docutils literal notranslate"><span class="pre">Dataset.data</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.Dataset.split"><code class="docutils literal notranslate"><span class="pre">Dataset.split()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.cartesian_product"><code class="docutils literal notranslate"><span class="pre">cartesian_product()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.doe_kmeans"><code class="docutils literal notranslate"><span class="pre">doe_kmeans()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.gridplot"><code class="docutils literal notranslate"><span class="pre">gridplot()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.pairsplot"><code class="docutils literal notranslate"><span class="pre">pairsplot()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.standardise_rescaling"><code class="docutils literal notranslate"><span class="pre">standardise_rescaling()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.data.unit_cube_rescaling"><code class="docutils literal notranslate"><span class="pre">unit_cube_rescaling()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.cartesian_product"><code class="docutils literal notranslate"><span class="pre">cartesian_product()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.doe_kmeans"><code class="docutils literal notranslate"><span class="pre">doe_kmeans()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.gridplot"><code class="docutils literal notranslate"><span class="pre">gridplot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.pairsplot"><code class="docutils literal notranslate"><span class="pre">pairsplot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.standardise_rescaling"><code class="docutils literal notranslate"><span class="pre">standardise_rescaling()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.data.unit_cube_rescaling"><code class="docutils literal notranslate"><span class="pre">unit_cube_rescaling()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-inferlyclient.models">Models</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel"><code class="docutils literal notranslate"><span class="pre">GPmodel</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel.predict_y"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_y()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel.predict_quantiles"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_quantiles()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.GPmodel.predict_log_density"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_log_density()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-inferlylens.models">Models</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.GPmodel"><code class="docutils literal notranslate"><span class="pre">GPmodel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.GPmodel.predict_y"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_y()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.GPmodel.predict_quantiles"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_quantiles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.GPmodel.predict_log_density"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_log_density()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_log_density()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_quantiles()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">GPmodel.predict_y()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.nlpd"><code class="docutils literal notranslate"><span class="pre">nlpd()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.plot_actual_vs_predicted"><code class="docutils literal notranslate"><span class="pre">plot_actual_vs_predicted()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.plot_lengthscales"><code class="docutils literal notranslate"><span class="pre">plot_lengthscales()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.plot_slices"><code class="docutils literal notranslate"><span class="pre">plot_slices()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.q2"><code class="docutils literal notranslate"><span class="pre">q2()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlyclient.models.rmse"><code class="docutils literal notranslate"><span class="pre">rmse()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.nlpd"><code class="docutils literal notranslate"><span class="pre">nlpd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.plot_actual_vs_predicted"><code class="docutils literal notranslate"><span class="pre">plot_actual_vs_predicted()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.plot_lengthscales"><code class="docutils literal notranslate"><span class="pre">plot_lengthscales()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.plot_slices"><code class="docutils literal notranslate"><span class="pre">plot_slices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.q2"><code class="docutils literal notranslate"><span class="pre">q2()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferlylens.models.rmse"><code class="docutils literal notranslate"><span class="pre">rmse()</span></code></a></li>
 </ul>
 </li>
 </ul>
   </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/api.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -848,48 +855,54 @@ mean value of the test set.</p>
           </div>
           <footer class="bd-footer-content">
             
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Nicolas Durrande
-</p>
-
+          </footer>
+        
+      </main>
+    </div>
   </div>
   
-  <div class="footer-item">
-    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
   <p class="copyright">
     
       © Copyright 2023, inferly.ai.
       <br/>
     
   </p>
+</div>
+      
+        <div class="footer-item">
 
-  </div>
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
   
-  <div class="footer-item">
-    
-  </div>
   
-  <div class="footer-item">
-    
-  </div>
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
   
 </div>
-          </footer>
-        
 
-      </main>
-    </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
-
-  <footer class="bd-footer">
   </footer>
   </body>
 </html>

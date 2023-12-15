@@ -70,7 +70,8 @@ extensions = [
     "sphinx.ext.viewcode",
     "matplotlib.sphinxext.plot_directive",
     "sphinx_autodoc_typehints",
-    "myst_nb",
+    #"myst_nb",
+    "nbsphinx",
     "sphinx_remove_toctrees",
     "sphinx_copybutton",
 ]
@@ -83,7 +84,7 @@ templates_path = ["_templates"]
 # copies of each notebook, and myst will choose which to convert based on
 # the order in the source_suffix list. Notebooks which are not executed have
 # outputs stored in ipynb but not in md, so we must convert the ipynb.
-source_suffix = [".rst", ".ipynb", ".md"]
+source_suffix = [".rst", ".pct.py", ".md"]
 
 # The main toctree document.
 main_doc = "index"
@@ -118,12 +119,18 @@ napolean_use_rtype = False
 # Additional files needed for generating LaTeX/PDF output:
 # latex_additional_files = ['references.bib']
 
+# -- Options nbsphinx -------------------------------------------------
+nbsphinx_custom_formats = {
+    ".pct.py": ["jupytext.reads", {"fmt": "py:percent"}],
+}
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -162,25 +169,25 @@ html_static_path = ["_static"]
 # html_sidebars = {}
 
 # -- Options for myst ----------------------------------------------
-myst_heading_anchors = 3  # auto-generate 3 levels of heading anchors
-myst_enable_extensions = ["dollarmath"]
-nb_execution_mode = "force"
-nb_execution_allow_errors = False
-nb_merge_streams = True
+#myst_heading_anchors = 3  # auto-generate 3 levels of heading anchors
+#myst_enable_extensions = ["dollarmath"]
+#nb_execution_mode = "force"
+#nb_execution_allow_errors = False
+#nb_merge_streams = True
 
 # nb_custom_formats = {
 #     ".md": ["jupytext.reads", {"fmt": "mystnb"}],
 # }
 
 # Notebook cell execution timeout; defaults to 30.
-nb_execution_timeout = 100
+#nb_execution_timeout = 100
 
 # List of patterns, relative to source directory, that match notebook
 # files that will not be executed.
-nb_execution_excludepatterns = [
+#nb_execution_excludepatterns = [
     # example:
     # 'notebooks/title.*',
-]
+#]
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
@@ -190,7 +197,7 @@ htmlhelp_basename = "Coredoc"
 
 # -- Options for LaTeX output ------------------------------------------------
 
-latex_elements = {
+#latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',
@@ -203,15 +210,15 @@ latex_elements = {
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
-}
+#}
 
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (main_doc, "INFERLYCORE.tex", "Inferly Core Documentation", "inferly.ai", "manual"),
-]
+#latex_documents = [
+#    (main_doc, "INFERLYCORE.tex", "Inferly Core Documentation", "inferly.ai", "manual"),
+#]
 
 
 # -- Options for manual page output ------------------------------------------

@@ -11,11 +11,11 @@ attach various diagnostics such as `plots` or `metrics`.
 Data
 *********************************
 
-.. automodule:: inferlyclient.data
+.. automodule:: inferlylens.data
    :members:
 
 Models
 *********************************
 
-.. automodule:: inferlyclient.models
+.. automodule:: inferlylens.models
    :members:

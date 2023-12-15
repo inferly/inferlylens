@@ -30,7 +30,9 @@ class Dataset:
             if name not in self.df.columns:
                 raise ValueError(f"variable '{name}' not found in dataset")
 
-    def split(self, sizes: list[int], labels: list[Any], seed: int | None = None) -> list["Dataset"]:
+    def split(
+        self, sizes: list[int], labels: list[Any], col_name: str = "split", seed: int | None = None
+    ) -> list["Dataset"]:
         """Split a dataset, typically into a training and test set.
 
         The method adds a column to the input dataset's dataframe to indicate whether
@@ -40,6 +42,7 @@ class Dataset:
         Args:
             sizes (list of integers): number of points to keep for each split.
             labels (list): labels associated with each split.
+            col_name (str): name of the column to be added to the dataframe.
             seed (int): Seed for the random number generator.
 
         Returns:
@@ -47,14 +50,14 @@ class Dataset:
         """
         n = self.df.shape[0]
         assert np.sum(sizes) <= n, "The sum of `sizes` must be less or equal to the number of data points."
-        full_labels = [[label] * size for size, label in zip(sizes, labels)] + [[None] * (n - np.sum(sizes))]
+        full_labels = [[label] * size for size, label in zip(sizes, labels)] + [['other'] * (n - np.sum(sizes))]
         full_labels = [label for sublist in full_labels for label in sublist]
         rng = np.random.default_rng(seed)
-        self.df["split"] = rng.permutation(full_labels)
+        self.df[col_name] = rng.permutation(full_labels)
 
         datasets = []
         for lab in labels:
-            filtered_df = pd.DataFrame(self.df[self.df["split"] == lab])  # makes pyright happy
+            filtered_df = pd.DataFrame(self.df[self.df[col_name] == lab])  # makes pyright happy
             datasets.append(Dataset(filtered_df, self.input_names, self.output_names))
 
         return datasets

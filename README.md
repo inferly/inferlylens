@@ -1,4 +1,4 @@
-[![Quality checks and Tests](https://github.com/NicolasDurrande/inferlylens/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/NicolasDurrande/inferlylens/actions/workflows/quality-checks.yaml)
+[![Quality checks and Tests](https://github.com/inferly/inferlylens/actions/workflows/quality-checks.yaml/badge.svg)](https://github.com/inferly/inferlylens/actions/workflows/quality-checks.yaml)
 
 # Inferlylens
 

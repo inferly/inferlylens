@@ -14,9 +14,9 @@ def test_pairsplot():
     assert fig is not None
 
     dataset = inflydata.Dataset(df, input_names=["x1", "x2"], output_names=["y"])
-    #dataset.split([90, 30, 10], ["train", "test", "val"])
-    #fig = pairsplot(dataset.df, ["x1", "x2", "y"], color="split", thinning=0.9)
-    #assert fig is not None
+    dataset.split([90, 30, 10], ["train", "test", "val"])
+    fig = pairsplot(dataset.df, ["x1", "x2", "y"], color="split", thinning=0.9)
+    assert fig is not None
 
 
 def test_gridplot():

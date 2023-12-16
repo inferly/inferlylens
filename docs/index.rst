@@ -1,7 +1,7 @@
 Inferlylens documentation
 ==========================================
 
-Inferlylens makes it easy to manipulate, plot and get insights from Gaussian process models. It is build on top of GPflow and tensorflow.
+Inferlylens is library that wraps GPflow models to make them easier to manipulate and plot.
 
 Install with poetry
 ###################
@@ -24,16 +24,10 @@ The project uses *ruff* for formating and linting and *pytest* for testing. We a
    :maxdepth: 1
    :hidden:
 
-   Inferlylens <self>
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
    quick_start
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 4
    :titlesonly:
    :hidden:
 

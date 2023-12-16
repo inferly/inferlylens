@@ -18,7 +18,6 @@ def _get_color_discrete_map(df, color):
 
     if np.all([label in ["test", "train", "val", "other"] for label in df[color].unique()]):
         color_map = split_color_dict
-        print(color_map)
     else:
         discrete_colorscheme = pio.templates[pio.templates.default].layout.colorway
         color_map = {v: discrete_colorscheme[i] for i, v in enumerate(df[color].unique())}

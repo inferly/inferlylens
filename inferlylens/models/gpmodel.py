@@ -14,11 +14,6 @@ class GPmodel:
         gpflow: a gpflow model, where the data has already been transformed
         input_transform: a tensorflow probability bijector
         output_transform: a tensorflow probability bijector
-
-    Methods:
-        predict_y
-        predict_quantiles
-        predict_log_density
     """
 
     def __init__(

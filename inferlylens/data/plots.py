@@ -8,7 +8,7 @@ from plotly.subplots import make_subplots
 from ..config import split_color_dict
 
 
-def _get_color_discrete_map(df, color):
+def _get_color_discrete_map(df, color)-> dict[str, str] | None:
     """Get color map dictionary for `df[color]`.
 
     Overides the default color scheme if the column `color` corresponds to 'train', 'test' or 'val' splits.
@@ -82,7 +82,7 @@ def gridplot(
     )
     if color:
         color_map = _get_color_discrete_map(df, color)
-        col = [color_map[i] for i in df[color]]
+        col = [color_map[i] for i in df[color]]  # type: ignore
     else:
         col = pio.templates[pio.templates.default].layout.colorway[0]
 

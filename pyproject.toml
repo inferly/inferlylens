@@ -7,9 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10, <3.12"  # tested with 3.11
-numpy = "^1.26"
+numpy = ">=1.23"
 scipy = "^1.10"
-tensorflow = "^2.11"
+tensorflow = "^2.11"  # tested with 2.15
 tensorflow-probability = "^0.22"
 gpflow = "^2.9.0"
 pandas = "^2.0.1"

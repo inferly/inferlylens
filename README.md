@@ -9,16 +9,16 @@ Inferlylens makes it easy to plot and get insights from Gaussian process models.
 
 ### Using poetry
 
-To install the library run
+To install the library, install `uv` and run
 ```
-poetry install
+uv sync
 ```
 in a terminal at the root of the repo
 
 ## Development
 The project uses *ruff* for formating and linting and *pytest* for testing. We also use taskify to make it easy run tests, or build the documentation:
 ```
-poetry run task check
-poetry run task test
+uv run task check
+uv run task test
 ```
-In order to build the documentation, install [pandoc](https://pandoc.org/installing.html) and run `poetry run task doc`.
+In order to build the documentation, install [pandoc](https://pandoc.org/installing.html) and run `uv run task doc`.

@@ -10,61 +10,52 @@ authors = [
 
 dependencies = [
     "numpy>=2.0",
-    "scipy>=1.10,<2.0",
-    "pandas>=2.0.1,<3.0.0",
-    "fastparquet>=2023.2.0,<2024.0.0",
+    "scipy>=1.10",
+    "pandas>=2.0.1",
+    "fastparquet>=2023.2.0",
     "plotly>=5.15.0",
-    "nbsphinx>=0.9.3,<1.0.0",
     "tensorflow>=2.20.0",
     "tf-keras>=2.20.1",
     "gpflow>=2.5.2",
 ]
 
-
-
-
 [dependency-groups]
 dev = [
-    "ipython>=8.12.0,<9.0.0",
-    "taskipy>=1.2.0,<2.0.0",
-    "black>=22.1.0,<23.0.0",
-    "pytest>=7.0.1,<8.0.0",
-    "jupyterlab>=3.3.1,<4.0.0",
-    "jupytext>=1.14.0,<2.0.0",
-    "ruff>=0.0.263,<1.0.0",
-    "pyright>=1.1.336,<2.0.0",
-    "coverage>=7.3.2,<8.0.0",
+    "ipython>=8.12.0",
+    "taskipy>=1.2.0",
+    "pytest>=7.0.1",
+    "jupyterlab>=3.3.1",
+    "jupytext>=1.14.0",
+    "ruff>=0.0.263",
+    "pyright>=1.1.336",
+    "coverage>=7.3.2",
 ]
 
 doc = [
-    "sphinx-book-theme>=1.0.1,<2.0.0",
-    "sphinx-autoapi>=2.1.0,<3.0.0",
-    "importlib-metadata>=6.6.0,<7.0.0",
-    "nbsphinx>=0.9.1,<1.0.0",
-    "sphinx-copybutton>=0.5.2,<0.6.0",
-    "sphinxext-opengraph>=0.8.2,<0.9.0",
-    "sphinx-autodoc-typehints>=1.23.0,<2.0.0",
-    "myst-nb>=0.17.2,<0.18.0",
-    "sphinx-remove-toctrees>=0.0.3,<0.1.0",
+    "sphinx-book-theme>=1.0.1",
+    "sphinx-autoapi>=2.1.0",
+    "importlib-metadata>=6.6.0",
+    "nbsphinx>=0.9.1",
+    "sphinx-copybutton>=0.5.2",
+    "sphinxext-opengraph>=0.8.2",
+    "sphinx-autodoc-typehints>=1.23.0",
+    "myst-nb>=0.17.2",
+    "sphinx-remove-toctrees>=0.0.3",
 ]
 
 
 [build-system]
-requires = ["uv_build>=0.9.9,<0.10.0"]
+requires = ["uv_build>=0.9.9"]
 build-backend = "uv_build"
 
 [tool.uv]
-default-groups = ["doc", "dev"]
+default-groups = ["dev"]
 
 [tool.taskipy.tasks]
 test = "coverage run -m pytest -v -x --ff -rN -Wignore -s --tb=short --durations=10 tests; coverage report; coverage xml"
-check = "ruff check .; black --check ."
-format = "ruff --fix .; black ."
+check = "ruff check .; ruff format --check ."
+format = "ruff check --fix .; ruff format ."
 doc = "cd docs; make html"
-
-
-[tool.black]
-line-length = 110
 
 
 [tool.pyright]
@@ -75,7 +66,7 @@ useLibraryCodeForTypes = false
 
 [tool.ruff]
 line-length = 110
-select = [
+lint.select = [
     "A",
     "C4",
     "F",
@@ -93,7 +84,7 @@ select = [
     "B026",
     "RUF100",
 ]
-ignore = [
+lint.ignore = [
     "C408",
     "D100",
     "D104",
@@ -104,5 +95,5 @@ ignore = [
     "PLR2004",
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"

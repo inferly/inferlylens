@@ -1,6 +1,6 @@
-from typing import Any, Union
+from typing import Any
 
 import numpy as np
 import tensorflow as tf
 
-TensorType = Union[np.ndarray[Any, Any], tf.Tensor, tf.Variable]
+TensorType = np.ndarray[Any, Any] | tf.Tensor | tf.Variable

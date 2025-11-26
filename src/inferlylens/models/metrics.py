@@ -29,7 +29,7 @@ def nlpd(model: GPmodel, test_data: Dataset) -> pd.Series:
 
     Args:
         model (GPmodel): A GPmodel object.
-        test_data (inferlylens Dataset): test data.
+        test_data (inferlycore Dataset): test data.
 
     Returns:
         pd.Series: The negative log predictive density for each output.
@@ -46,7 +46,7 @@ def q2(model: GPmodel, test_data: Dataset) -> pd.Series:
 
     Args:
         model (GPmodel): A GPmodel object.
-        test_data (inferlylens Dataset): test data.
+        test_data (inferlycore Dataset): test data.
 
     Returns:
         pd.Series: The q2 metric for each output.

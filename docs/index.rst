@@ -3,12 +3,12 @@ Inferlylens documentation
 
 Inferlylens is library that wraps GPflow models to make them easier to manipulate and plot.
 
-Install with poetry
+Install with uv
 ###################
 
-To install the library and all its dependencies in a virtual environment, you can run
+To install the library and all its dependencies in a virtual environment, you simply need to run
 
-   poetry install
+   uv sync
    
 in a terminal at the root of the repository.
 
@@ -17,8 +17,8 @@ Development setup
 
 The project uses *ruff* for formating and linting and *pytest* for testing. We also use *taskipy* to make it easy run tests, or build the documentation:::
 
-   poetry run task check
-   poetry run task test
+   uv run task check
+   uv run task test
 
 .. toctree::
    :maxdepth: 1

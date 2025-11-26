@@ -100,7 +100,7 @@ def plot_actual_vs_predicted(model: GPmodel, data: Dataset) -> go.Figure:
 
     Args:
         model (GPmodel): A GPmodel object.
-        data (inferlylens Dataset): Dataset to compare model train/predictions.
+        data (inferlycore Dataset): Dataset to compare model train/predictions.
     """
     mean, _ = model.predict_y(data.df[data.input_names].values)
     lower, upper = model.predict_quantiles(data.df[data.input_names].values, np.array([0.025, 0.975]))

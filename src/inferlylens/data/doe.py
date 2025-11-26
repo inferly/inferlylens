@@ -22,7 +22,7 @@ def doe_kmeans(n: int, dim: int, input_names: list[str] | None = None) -> pd.Dat
         if dim != len(input_names):  # pragma: no cover
             raise ValueError("`input_names` must be a list with of length `dim`.")
     else:
-        input_names = [f"x{i+1}" for i in range(dim)]
+        input_names = [f"x{i + 1}" for i in range(dim)]
 
     U = np.random.uniform(size=(10 * n * dim, dim))
     X = kmeans2(U, n, minit="points", iter=100)[0]

@@ -90,7 +90,7 @@ exclude_patterns = [
     # Sometimes sphinx reads its own outputs as inputs!
     "_build/html",
     "_build/jupyter_execute",
-    "_build/doctrees/nbsphinx" "README.md",
+    "_build/doctrees/nbsphinxREADME.md",
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.

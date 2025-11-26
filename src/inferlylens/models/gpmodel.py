@@ -22,7 +22,6 @@ class GPmodel:
         input_transform: tfp.bijectors.Bijector = tfp.bijectors.Identity(),
         output_transform: tfp.bijectors.Bijector = tfp.bijectors.Identity(),
     ) -> None:
-
         self.gpflow = gpflow
         self.input_transform = input_transform
         self.output_transform = output_transform

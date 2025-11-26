@@ -7,53 +7,41 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.11.0]
+        python-version: ["3.11.0"]
       fail-fast: true
 
     name: Python-${{ matrix.python-version }}
+
     steps:
       #----------------------------------------------
-      #       check-out repo and set-up python
+      #       check-out repo and set up Python+uv
       #----------------------------------------------
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Install uv and Python ${{ matrix.python-version }}
+        uses: astral-sh/setup-uv@v7
+        with:
+          # matrix Python version
+          python-version: ${{ matrix.python-version }}
+          # let setup-uv persist uv's cache for you
+          enable-cache: true
+
       #----------------------------------------------
-      #       install
+      #       install dependencies (uv)
       #----------------------------------------------
-    - name: Install Poetry
-      uses: snok/install-poetry@v1
-      with:
-        virtualenvs-create: true
-        virtualenvs-in-project: true
+      - name: Install dependencies
+        run: uv sync --locked --dev
+        # If you don't commit uv.lock yet, drop the --locked flag.
+
       #----------------------------------------------
-      #       load cached venv if cache exists
+      #              checks / lint / format
       #----------------------------------------------
-    - name: Load cached venv
-      id: cached-poetry-dependencies
-      uses: actions/cache@v2
-      with:
-        path: .venv
-        key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-      #----------------------------------------------
-      #       install dependencies if cache does not exist
-      #----------------------------------------------
-    - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root
-      #----------------------------------------------
-      # install your root project, if required
-      #----------------------------------------------
-    - name: Install library
-      run: poetry install --no-interaction
-      #----------------------------------------------
-      #              Checks: formatting, imports, linters
-      #----------------------------------------------
-    - name: Run tests
-      run: poetry run task check
+      - name: Run checks
+        run: uv run task check
+
       #----------------------------------------------
       #              run test suite
       #----------------------------------------------
-    - name: Run tests
-      run: poetry run task test
+      - name: Run tests
+        run: uv run task test
